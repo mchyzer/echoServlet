@@ -11,6 +11,11 @@ servlet to echo the request back to the browser.  Setup in web.xml
     <url-pattern>/echo</url-pattern>
   </servlet-mapping>
 
+Might need to add an apache config (change the port for what it needs to be):
+
+ProxyPass /fastPdfServiceTestDaemon/echo ajp://localhost:8080/fastPdfServiceTestDaemon/echo
+
+
 Go to the app:
 
 https://app.whatever/appName/echo?paramName1=paramValue1 
