@@ -41,7 +41,6 @@ public class EchoServlet extends HttpServlet {
     Enumeration<String> attributeNames = httpServletRequest.getAttributeNames();
 
     boolean foundRemoteUser = false;
-    
     while (attributeNames.hasMoreElements()) {
       String attributeName = attributeNames.nextElement();
       
@@ -61,6 +60,18 @@ public class EchoServlet extends HttpServlet {
       
     }
     
+    if (httpServletRequest.getAttribute("EPPN2") != null) {
+      result.append("EPPN2").append(": ")
+          .append(httpServletRequest.getAttribute("EPPN2")).append("\n");
+    }
+    if (httpServletRequest.getAttribute("EPPN") != null) {
+      result.append("EPPN").append(": ")
+          .append(httpServletRequest.getAttribute("EPPN")).append("\n");
+    }
+    if (httpServletRequest.getAttribute("eppn") != null) {
+      result.append("eppn").append(": ")
+          .append(httpServletRequest.getAttribute("eppn")).append("\n");
+    }
     if (httpServletRequest.getAttribute("COSIGN_SERVICE") != null) {
       result.append("COSIGN_SERVICE").append(": ")
           .append(httpServletRequest.getAttribute("COSIGN_SERVICE")).append("\n");
