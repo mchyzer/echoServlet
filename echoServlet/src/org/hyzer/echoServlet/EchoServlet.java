@@ -100,6 +100,39 @@ public class EchoServlet extends HttpServlet {
       result.append(paramName).append(": ").append(paramValue).append("\n");
     }
 
+
+    result.append("\n\nRequest details:\n\n");
+    
+    
+    result.append("characterEncoding: ").append(httpServletRequest.getCharacterEncoding()).append("\n");
+    result.append("contentLength: ").append(httpServletRequest.getContentLength()).append("\n");
+    result.append("contentType: ").append(httpServletRequest.getContentType()).append("\n");
+    result.append("cookies: ").append(httpServletRequest.getCookies() == null ? 0 : httpServletRequest.getCookies().length).append("\n");
+    result.append("locale: ").append(httpServletRequest.getLocale()).append("\n");
+    result.append("protocol: ").append(httpServletRequest.getProtocol()).append("\n");
+    result.append("remoteAddr: ").append(httpServletRequest.getRemoteAddr()).append("\n");
+    result.append("remoteHost: ").append(httpServletRequest.getRemoteHost()).append("\n");
+    result.append("scheme: ").append(httpServletRequest.getScheme()).append("\n");
+    result.append("serverName: ").append(httpServletRequest.getServerName()).append("\n");
+    result.append("serverPort: ").append(httpServletRequest.getServerPort()).append("\n");
+    result.append("secure: ").append(httpServletRequest.isSecure()).append("\n");
+    result.append("authType: ").append(httpServletRequest.getAuthType()).append("\n");
+    result.append("contextPath: ").append(httpServletRequest.getContextPath()).append("\n");
+    result.append("method: ").append(httpServletRequest.getMethod()).append("\n");
+    result.append("pathInfo: ").append(httpServletRequest.getPathInfo()).append("\n");
+    result.append("pathTranslated: ").append(httpServletRequest.getPathTranslated()).append("\n");
+    result.append("queryString: ").append(httpServletRequest.getQueryString()).append("\n");
+    result.append("remoteUser: ").append(httpServletRequest.getRemoteUser()).append("\n");
+    result.append("requestURI: ").append(httpServletRequest.getRequestURI()).append("\n");
+    result.append("requestURL: ").append(httpServletRequest.getRequestURL()).append("\n");
+    result.append("requestedSessionId: ").append(httpServletRequest.getRequestedSessionId()).append("\n");
+    result.append("servletPath: ").append(httpServletRequest.getServletPath()).append("\n");
+    result.append("requestedSessionIdFromCookie: ").append(httpServletRequest.isRequestedSessionIdFromCookie()).append("\n");
+    result.append("requestedSessionIdFromURL: ").append(httpServletRequest.isRequestedSessionIdFromURL()).append("\n");
+    result.append("requestedSessionIdValid: ").append(httpServletRequest.isRequestedSessionIdValid()).append("\n");
+    String userPrincipal = httpServletRequest.getUserPrincipal() == null ? null : httpServletRequest.getUserPrincipal().getName();
+    result.append("userPrincipal: ").append(userPrincipal).append("\n");    
+
     result.append("</pre>");
     return result.toString();
   }
